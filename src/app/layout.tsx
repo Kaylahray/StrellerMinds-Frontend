@@ -16,6 +16,10 @@ import { initializeServerEnvironment } from '../lib/env-server';
 import StyledComponentsRegistry from '../lib/registry';
 import MainLayoutWrapper from '../components/MainLayoutWrapper';
 
+// Initialize fonts
+const inter = Inter({ subsets: ['latin'] });
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] });
+
 // Initialize server environment validation
 initializeServerEnvironment();
 
@@ -150,9 +154,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-      // className={`${inter.variable} ${sourceCodePro.variable}`}
-      >
+      {/* <body className={`${inter.variable} ${sourceCodePro.variable}`}> */}
+      <body className={`${inter} ${sourceCodePro}`}>
         <StyledComponentsRegistry>
           <Providers>
             <EnvironmentValidator />
